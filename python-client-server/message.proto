@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+service Service{
+
+rpc Channel(stream Message) returns (stream SumMessage) {}
+rpc Request(Message) returns (SumMessage) {}
+}
+
+message Message{
+string message = 1;
+}
+
+message SumMessage{
+int32 sum = 1;
+string message = 2;
+}

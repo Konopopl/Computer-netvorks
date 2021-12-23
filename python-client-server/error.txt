@@ -1,0 +1,40 @@
+Traceback (most recent call last):
+  File "/Users/a18928901/Library/Python/3.8/lib/python/site-packages/sqlalchemy/engine/base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "/Users/a18928901/Library/Python/3.8/lib/python/site-packages/sqlalchemy/engine/default.py", line 719, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedTable: relation "gravitee.events" does not exist
+LINE 1: select * from "gravitee"."events"
+                      ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "importer.py", line 12, in <module>
+    print(type(engine.execute("select * from \"gravitee\".\"events\"").scalar()))
+  File "<string>", line 2, in execute
+  File "/Users/a18928901/Library/Python/3.8/lib/python/site-packages/sqlalchemy/util/deprecations.py", line 401, in warned
+    return fn(*args, **kwargs)
+  File "/Users/a18928901/Library/Python/3.8/lib/python/site-packages/sqlalchemy/engine/base.py", line 3139, in execute
+    return connection.execute(statement, *multiparams, **params)
+  File "/Users/a18928901/Library/Python/3.8/lib/python/site-packages/sqlalchemy/engine/base.py", line 1274, in execute
+    return self._exec_driver_sql(
+  File "/Users/a18928901/Library/Python/3.8/lib/python/site-packages/sqlalchemy/engine/base.py", line 1578, in _exec_driver_sql
+    ret = self._execute_context(
+  File "/Users/a18928901/Library/Python/3.8/lib/python/site-packages/sqlalchemy/engine/base.py", line 1845, in _execute_context
+    self._handle_dbapi_exception(
+  File "/Users/a18928901/Library/Python/3.8/lib/python/site-packages/sqlalchemy/engine/base.py", line 2026, in _handle_dbapi_exception
+    util.raise_(
+  File "/Users/a18928901/Library/Python/3.8/lib/python/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/Users/a18928901/Library/Python/3.8/lib/python/site-packages/sqlalchemy/engine/base.py", line 1802, in _execute_context
+    self.dialect.do_execute(
+  File "/Users/a18928901/Library/Python/3.8/lib/python/site-packages/sqlalchemy/engine/default.py", line 719, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "gravitee.events" does not exist
+LINE 1: select * from "gravitee"."events"
+                      ^
+
+[SQL: select * from "gravitee"."events"]
+(Background on this error at: https://sqlalche.me/e/14/f405)
