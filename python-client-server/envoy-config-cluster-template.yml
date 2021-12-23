@@ -1,8 +1,0 @@
-  - name: cluster_%d
-    connect_timeout: 5s
-    type: strict_dns
-    lb_policy: round_robin
-    load_assignment:
-      cluster_name: cluster_%d
-      endpoints:
-        - lb_endpoints:

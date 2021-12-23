@@ -1,5 +1,0 @@
-            - endpoint:
-                address:
-                  socket_address:
-                    address: %s
-                    port_value: %s
